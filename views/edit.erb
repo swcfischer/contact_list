@@ -1,0 +1,22 @@
+<h1>Edit Your Info For <%= params[:name] %></h1>
+<center>
+<form action="/edit/<%= params[:name] %>" method="post">
+<strong>First Name:</strong>
+  <input type="text" name="first_name" value="<%= @first_name %>">
+<strong>Last Name:</strong>
+  <input type="text" name="last_name" value="<%= @last_name %>">
+<strong>Phone number:</strong>
+  <input type="text" name="phone_number" value="<%= @phone %>">
+<strong>Relation:</strong>
+<select name="relation">
+  <option value="family" <%= selected(@relation, "family") %>>Family</option>
+  <option value="friend" <%= selected(@relation, "friend") %>>Friend</option>
+  <option value="colleague" <%= selected(@relation, "colleague") %>>Colleague</option>
+  <option value="acquaintance" <%= selected(@relation, "acquaintance") %>>Acquaintance</option>
+</select> 
+  <br>
+  <p></p>
+<button type="submit" value="Submit"><h3>Submit</h3>
+</button>
+</form>
+</center>

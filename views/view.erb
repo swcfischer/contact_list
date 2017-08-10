@@ -1,0 +1,7 @@
+<h1>Contact Info</h1>
+<ul>
+<% @info.each do |category, data| %>
+  <li><p><strong><%= category.capitalize %>:</strong></p></h3><p><%= data %></p></li>
+<% end %>
+</ul>
+<strong><a href="/">Home</a></strong>

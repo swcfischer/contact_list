@@ -1,0 +1,23 @@
+<h1>Contacts</h1>
+<% if session[:status] %>
+  <p><strong><%= session.delete(:status) %></strong></p>
+<% end %>
+
+<ul>
+<% sort_contacts do |name, info| %>
+  <li>
+    <% if info[:block] %>
+      <h3><%= name %> :blocked</h3>
+    <% else %>
+      <h3><%= name %></h3>
+    <% end %>
+      <a href="/view/<%= name %>"><strong>View</strong></a>
+      <a href="/edit/<%= name%>"><strong>Edit</strong></a>
+      <form action="/<%= name %>/delete" method="post"><input type="submit" value="Delete"></form>
+      <form action="/<%= name %>/block" method="post"><input type="submit" value="Block"></form>
+  </li>
+  <br>
+<% end %>
+</ul>
+<br>
+<a href="/add_contact">Add Contact</a>
