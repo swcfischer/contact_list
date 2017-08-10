@@ -5,6 +5,7 @@ GEM
     erubis (2.7.0)
     multi_json (1.12.1)
     mustermann (1.0.0)
+    puma (3.9.1)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -27,6 +28,8 @@ PLATFORMS
 
 DEPENDENCIES
   erubis
+  puma
+  rack
   sinatra
   sinatra-contrib
 
